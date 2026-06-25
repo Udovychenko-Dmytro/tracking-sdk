@@ -1,0 +1,32 @@
+{
+  "name": "com.dmytroudovychenko.tracking",
+  "version": "1.0.0",
+  "displayName": "Dmytro Udovychenko Tracking SDK",
+  "description": "A production-grade, in-process event-tracking SDK for Unity. A tiny public API (Tracker.Init / SendMessage / SendMapAsync) sits over a non-blocking delivery pipeline, so tracking calls never block the main thread and never throw into your game code.\n\nPipeline: a thread-safe bounded queue (configurable DropOldest / RejectNew overflow) feeds a background batching dispatcher, which hands batches to a pluggable transport. Reliability is built in: retries with exponential backoff + jitter, a circuit breaker, a dead-letter sink, connectivity-awareness (offline hold then flush), durable persistence with a lifecycle snapshot on pause/quit, at-least-once delivery with idempotency keys, metrics, a logging hook, and a runtime privacy opt-out.\n\nTestable by design: dependency-injection seams (ITransport / IEventStore / IClock / IDelayer / IConnectivity) make the whole pipeline deterministic, with no real network, disk, or wall-clock in the default EditMode test suite.\n\nSample: a 'Basic Usage' Canvas demo (init targets, valid/error sends, live metric counters) ships with the package in a hidden Samples~ folder, so it does NOT appear in the Project window. To use it, open Window > Package Manager, select this package, and under 'Samples' click Import — Unity copies it into Assets/Samples/.",
+  "unity": "2022.3",
+  "documentationUrl": "https://github.com/Udovychenko-Dmytro/tracking-sdk#readme",
+  "changelogUrl": "https://github.com/Udovychenko-Dmytro/tracking-sdk/blob/main/tracking-sdk/Packages/com.dmytroudovychenko.tracking/CHANGELOG.md",
+  "licensesUrl": "https://github.com/Udovychenko-Dmytro/tracking-sdk/blob/main/tracking-sdk/Packages/com.dmytroudovychenko.tracking/LICENSE.md",
+  "keywords": [
+    "tracking",
+    "analytics",
+    "events",
+    "telemetry",
+    "sdk"
+  ],
+  "author": {
+    "name": "Dmytro Udovychenko"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Udovychenko-Dmytro/tracking-sdk.git"
+  },
+  "samples": [
+    {
+      "displayName": "Basic Usage",
+      "description": "Canvas demo: init targets, valid/error sends, and live metric counters.",
+      "path": "Samples~/BasicUsage"
+    }
+  ]
+}
