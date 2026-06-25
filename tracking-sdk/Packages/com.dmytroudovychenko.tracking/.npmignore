@@ -1,0 +1,16 @@
+# Keep OS / editor cruft out of the published `npm pack` tarball.
+# Exclude-only: everything else (Runtime/, Tests/, Samples~/, docs, and all .meta
+# files Unity needs) is still packed.
+.DS_Store
+._*
+Thumbs.db
+ehthumbs.db
+*.swp
+*.tmp
+# `*~` drops editor backup files (e.g. Foo.cs~) but also matches the UPM
+# `Samples~` and `Documentation~` directory names — re-include them so they are packed.
+*~
+!Samples~/
+!Samples~/**
+!Documentation~/
+!Documentation~/**
